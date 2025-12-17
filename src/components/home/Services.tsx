@@ -244,7 +244,7 @@ function ServiceBlob(props: BlobProps) {
         y: rect.top + rect.height / 2,
       });
     }
-  }, [isHovered, onBlobRef]);
+  }, [isHovered]);
 
   return desktop ? (
     <div
