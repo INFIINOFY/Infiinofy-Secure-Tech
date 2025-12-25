@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import MeteorShower from "../MeteorShower";
+import InteractiveSpiral from "@/components/InteractiveSpiral";
 
 const phrases = [
   "Digital Presence",
@@ -97,7 +97,7 @@ useEffect(() => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/75 to-background" />
       </div> */}
-      <MeteorShower />
+      <InteractiveSpiral className="absolute inset-0 z-0" />
 
       {/* Animated Particles */}
       <div className="absolute inset-0 z-0">
@@ -154,7 +154,7 @@ useEffect(() => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto" //text-muted-foreground
           >
             Where innovation meets elegance. We craft sophisticated digital experiences that transform businesses and captivate audiences.
           </motion.p>
