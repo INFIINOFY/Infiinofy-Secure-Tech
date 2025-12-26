@@ -72,7 +72,7 @@ const Navigation = () => {
       )}
     >
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="relative">
@@ -82,8 +82,8 @@ const Navigation = () => {
             <span className="text-2xl font-bold text-gradient-gold">ShreeJin Tech</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => {
               if (link.name === "Contact") {
                 return (
@@ -122,6 +122,10 @@ const Navigation = () => {
                 </Link>
               );
             })}
+          </div>
+
+          {/* Get Started Button - Right */}
+          <div className="hidden md:block">
             <Link to="/schedule">
               <Button className="hover-glow">
                 Get Started

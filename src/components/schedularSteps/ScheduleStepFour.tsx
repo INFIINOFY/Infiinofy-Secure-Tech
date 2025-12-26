@@ -40,19 +40,58 @@ export default function ScheduleStepFour({ date, time, formData, onBack, onCompl
       </motion.h2>
 
       <motion.div
-        className="text-gray-300 max-w-md space-y-3 my-6"
+        className="w-full max-w-2xl mx-auto my-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <p><span className="font-semibold text-cyan-400">Date:</span> {date}</p>
-        <p><span className="font-semibold text-cyan-400">Time:</span> {time}</p>
-        <p><span className="font-semibold text-cyan-400">Name:</span> {formData.name}</p>
-        <p><span className="font-semibold text-cyan-400">Email:</span> {formData.email}</p>
-        {formData.phone && <p><span className="font-semibold text-cyan-400">Phone:</span> {formData.phone}</p>}
-        {formData.company && <p><span className="font-semibold text-cyan-400">Company:</span> {formData.company}</p>}
-        <p><span className="font-semibold text-cyan-400">Service:</span> {formData.service}</p>
-        {formData.message && <p><span className="font-semibold text-cyan-400">Message:</span> {formData.message}</p>}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <p className="text-sm font-semibold text-cyan-400 mb-1">Date</p>
+            <p className="text-gray-300">{date}</p>
+          </div>
+          
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <p className="text-sm font-semibold text-cyan-400 mb-1">Time</p>
+            <p className="text-gray-300">{time}</p>
+          </div>
+          
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <p className="text-sm font-semibold text-cyan-400 mb-1">Name</p>
+            <p className="text-gray-300">{formData.name}</p>
+          </div>
+          
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <p className="text-sm font-semibold text-cyan-400 mb-1">Email</p>
+            <p className="text-gray-300">{formData.email}</p>
+          </div>
+          
+          {formData.phone && (
+            <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+              <p className="text-sm font-semibold text-cyan-400 mb-1">Phone</p>
+              <p className="text-gray-300">{formData.phone}</p>
+            </div>
+          )}
+          
+          {formData.company && (
+            <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+              <p className="text-sm font-semibold text-cyan-400 mb-1">Company</p>
+              <p className="text-gray-300">{formData.company}</p>
+            </div>
+          )}
+          
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <p className="text-sm font-semibold text-cyan-400 mb-1">Service</p>
+            <p className="text-gray-300">{formData.service}</p>
+          </div>
+          
+          {formData.message && (
+            <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 md:col-span-2">
+              <p className="text-sm font-semibold text-cyan-400 mb-1">Message</p>
+              <p className="text-gray-300">{formData.message}</p>
+            </div>
+          )}
+        </div>
       </motion.div>
 
       <div className="flex gap-4 mt-4">

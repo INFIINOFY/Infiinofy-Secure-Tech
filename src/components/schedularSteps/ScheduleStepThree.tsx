@@ -32,7 +32,7 @@ export default function ScheduleStepThree({ onNext, onBack, formData, setFormDat
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -50 }}
       transition={{ duration: 0.3 }}
-      className="space-y-6"
+      className="space-y-6 max-w-2xl mx-auto"
     >
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">

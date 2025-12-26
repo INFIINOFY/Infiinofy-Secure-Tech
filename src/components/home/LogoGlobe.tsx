@@ -143,7 +143,7 @@ const LogoGlobe = () => {
 
       {/* Inner Circle - Other Logos */}
       <motion.div
-        className="absolute inset-0 z-20"
+        className="absolute inset-0 z-40"
         animate={{ rotate: -360 }}
         transition={{ 
           duration: isMobile ? 36 : 22,
@@ -159,7 +159,7 @@ const LogoGlobe = () => {
         {innerLogos.map((logo) => (
           <div
             key={logo.file}
-            className="absolute flex items-center justify-center z-20"
+            className="absolute flex items-center justify-center z-40"
             style={{
               left: `${logo.x}%`,
               top: `${logo.y}%`,
@@ -179,11 +179,11 @@ const LogoGlobe = () => {
                 transform: 'translateZ(0)',
               }}
             >
-              <div className={`${isMobile ? "w-12 h-12" : "w-16 h-16"} rounded-full bg-card/90 border border-border/70 ${isMobile ? 'shadow-md' : 'shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)]'} flex items-center justify-center ${isMobile ? '' : 'backdrop-blur-sm'} z-20`}>
+              <div className={`${isMobile ? "w-12 h-12" : "w-16 h-16"} rounded-full bg-card/90 border border-border/70 ${isMobile ? 'shadow-md' : 'shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)]'} flex items-center justify-center ${isMobile ? '' : 'backdrop-blur-sm'} z-40`}>
                 <img
                   src={`/other logos/${logo.file}`}
                   alt={`${logo.file} logo`}
-                  className={`${isMobile ? "w-8 h-8" : "w-12 h-12"} object-contain relative z-20`}
+                  className={`${isMobile ? "w-8 h-8" : "w-12 h-12"} object-contain relative z-40`}
                   loading="lazy"
                   draggable={false}
                   style={{

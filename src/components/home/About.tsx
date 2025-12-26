@@ -43,7 +43,7 @@ const About = () => {
                   className="p-4 rounded-xl bg-card/50 border border-border/60 shadow-sm"
                 >
                   <div className="flex items-start space-x-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
+                    <span className="mt-2 h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
                     <p className="text-foreground">{item}</p>
                   </div>
                 </div>

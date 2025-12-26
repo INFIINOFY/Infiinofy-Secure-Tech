@@ -107,7 +107,7 @@ const Schedule = () => {
                           <step.icon className="w-6 h-6 text-white" />
                         )}
                       </motion.div>
-                      <p className={`mt-2 text-sm font-medium ${
+                      <p className={`mt-2 text-xs sm:text-sm font-medium text-center ${
                         currentStep >= step.id ? "text-white" : "text-slate-400"
                       }`}>
                         {step.name}
@@ -131,7 +131,7 @@ const Schedule = () => {
         </section>
 
         {/* Booking Form */}
-        <section className="py-24">
+        <section className="py-5">
           <div className="container mx-auto px-6">
             <div className="max-w-7xl mx-auto">
               <AnimatePresence mode="wait">
@@ -140,7 +140,7 @@ const Schedule = () => {
                 )}
 
                 {currentStep === 2 && (
-                  <ScheduleStepTwo onNext={handleNext} time={time} setTime={setTime} />
+                  <ScheduleStepTwo onNext={handleNext} onBack={handleBack} time={time} setTime={setTime} />
                 )}
 
                 {currentStep === 3 && (

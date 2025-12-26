@@ -108,16 +108,16 @@ const Projects = () => {
 
         {/* Project Detail Dialog */}
         <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-3xl backdrop-luxury">
+          <DialogContent className="max-w-3xl backdrop-luxury max-h-[80vh] overflow-y-auto">
             {selectedProject !== null && (
               <>
                 <DialogHeader>
-                  <DialogTitle className="text-3xl font-bold">
+                  <DialogTitle className="text-2xl lg:text-3xl font-bold">
                     {projects[selectedProject].title}
                   </DialogTitle>
                 </DialogHeader>
-                <div className="space-y-6">
-                  <div className="relative overflow-hidden rounded-lg aspect-video">
+                <div className="space-y-4">
+                  <div className="relative overflow-hidden rounded-lg aspect-video lg:aspect-[16/8]">
                     <img
                       src={projects[selectedProject].image}
                       alt={projects[selectedProject].title}
@@ -125,32 +125,32 @@ const Projects = () => {
                     />
                   </div>
                   <div>
-                    <div className="text-primary font-medium mb-2">
+                    <div className="text-primary font-medium mb-2 text-sm">
                       {projects[selectedProject].category}
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
                       {projects[selectedProject].fullDescription}
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-3">Technologies Used</h4>
+                    <h4 className="font-semibold mb-2 text-sm lg:text-base">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {projects[selectedProject].tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20"
+                          className="px-3 py-1.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-border">
+                  <div className="pt-3 border-t border-border">
                     <a
                       href={projects[selectedProject].link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                      className="inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm"
                     >
                       View Project <ExternalLink className="w-4 h-4" />
                     </a>

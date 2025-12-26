@@ -304,53 +304,84 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Core Services</h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-60">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             We provide a range of IT services to help your business thrive in the digital age.
           </p>
         </motion.div>
 
-        <div className="relative lg:min-h-[600px] mb-60">
-          <div className="hidden lg:block relative w-full h-[600px]" ref={circleContainerRef}>
-            {services.map((s, idx) => (
-              <ServiceBlob
-                key={s.id}
-                {...s}
-                index={idx}
-                isVisible={isInView}
-                hoveredId={hovered}
-                setHovered={setHovered}
-                desktop={true}
-                onBlobRef={(pos) => {
-                  if (hovered === s.id && pos) {
-                    setBlobPosition(pos);
-                  }
+        {/* Grid Layout - 3 columns, 2 rows */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              style={{
+                borderRadius: "24px",
+                boxShadow: `inset 0 10px 30px rgba(0,0,0,0.35), 0 0 30px ${service.color}20, 0 12px 30px ${service.color}15`,
+              }}
+              className="relative bg-gradient-to-br from-[#1a1f3a] to-[#2a2f4a] backdrop-blur-sm border border-[#3a4f6a]/70 p-6"
+            >
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ 
+                  duration: 4.5 + (idx * 0.5), 
+                  repeat: Infinity, 
+                  ease: [0.45, 0.05, 0.55, 0.95],
+                  delay: idx * 0.3 
                 }}
+                style={{
+                  willChange: 'transform',
+                  backfaceVisibility: 'hidden',
+                  transform: 'translateZ(0)',
+                }}
+              >
+              <div
+                style={{
+                  borderRadius: "24px",
+                  background: `linear-gradient(135deg, ${service.color}20, transparent)`,
+                  opacity: 0.2,
+                }}
+                className="absolute inset-0"
               />
-            ))}
 
-            {/* Center Bubble that appears on hover */}
-            {hovered && blobPosition && (
-              <CenterBubble
-                service={services.find((s) => s.id === hovered)!}
-                isVisible={true}
-                originPosition={getContainerRelativePosition(blobPosition)}
-              />
-            )}
-          </div>
+              <div className="relative z-10">
+                <div
+                  style={{
+                    filter: `drop-shadow(0 0 10px ${service.color})`,
+                    color: service.color,
+                  }}
+                  className="mb-4 flex justify-center"
+                >
+                  {React.cloneElement(service.icon as React.ReactElement, {
+                    className: "w-12 h-12",
+                  })}
+                </div>
 
-          <div className="flex flex-col items-center gap-6 lg:hidden">
-            {services.map((s, idx) => (
-              <ServiceBlob
-                key={s.id}
-                {...s}
-                index={idx}
-                isVisible={isInView}
-                hoveredId={hovered}
-                setHovered={setHovered}
-                desktop={false}
-              />
-            ))}
-          </div>
+                <h3
+                  style={{ color: service.color }}
+                  className="text-xl font-semibold mb-4 text-center font-poppins"
+                >
+                  {service.title}
+                </h3>
+
+                <ul className="space-y-2 border-t border-[#3a4f6a]/70 pt-4">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center text-sm text-[#b0c4de]">
+                      <span
+                        style={{ backgroundColor: service.color }}
+                        className="w-1.5 h-1.5 rounded-full mr-3 flex-shrink-0"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
 
       </div>

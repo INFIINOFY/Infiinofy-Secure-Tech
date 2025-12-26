@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type ScheduleStepTwoProps = {
   onNext: () => void;
+  onBack: () => void;
   time: string;
   setTime: (value: string) => void;
 };
 
 export default function ScheduleStepTwo({
   onNext,
+  onBack,
   time,
   setTime,
 }: ScheduleStepTwoProps) {
@@ -31,7 +35,7 @@ export default function ScheduleStepTwo({
   ];
 
   return (
-    <div className="space-y-4 text-gray-300">
+    <div className="space-y-4 text-gray-300 flex flex-col items-center">
       <h2 className="text-xl sm:text-2xl font-semibold">Select a Time Slot</h2>
 
       <style>{`
@@ -48,7 +52,7 @@ export default function ScheduleStepTwo({
       `}</style>
 
       <div
-        className="time-slots-container grid grid-cols-2 gap-4 overflow-y-auto max-h-[1000px] pr-2"
+        className="time-slots-container grid grid-cols-2 gap-4 overflow-y-auto max-h-[1000px] pr-2 w-full max-w-[600px]"
         style={{
           scrollbarWidth: "thin",
           scrollbarColor: "#4B5563 transparent",
@@ -77,6 +81,12 @@ export default function ScheduleStepTwo({
             </motion.button>
           );
         })}
+      </div>
+
+      <div className="flex justify-start pt-4 w-full max-w-[600px]">
+        <Button onClick={onBack} variant="outline" size="lg" type="button">
+          <ArrowLeft className="mr-2 w-4 h-4" /> Back
+        </Button>
       </div>
     </div>
   );
