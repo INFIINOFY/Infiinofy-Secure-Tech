@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import InteractiveSpiral from "@/components/InteractiveSpiral";
-
+import MeteorShower from "@/components/MeteorShower"
 const phrases = [
   "Digital Presence",
   "Intelligent Products",
@@ -97,7 +97,7 @@ useEffect(() => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/75 to-background" />
       </div> */}
-      <InteractiveSpiral className="absolute inset-0 z-0" />
+      <MeteorShower  />
 
       {/* Animated Particles */}
       <div className="absolute inset-0 z-0">
