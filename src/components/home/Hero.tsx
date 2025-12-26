@@ -97,7 +97,7 @@ useEffect(() => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/75 to-background" />
       </div> */}
-      <MeteorShower  />
+      <InteractiveSpiral className="absolute inset-0 z-0" />
 
       {/* Animated Particles */}
       <div className="absolute inset-0 z-0">
