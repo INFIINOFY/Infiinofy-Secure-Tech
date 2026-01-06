@@ -11,8 +11,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold text-gradient-gold">ShreeJin Tech</span>
+              {/* <Sparkles className="w-6 h-6 text-primary" /> */}
+              <span className="text-xl font-bold text-gradient-gold">INFIINOFY</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Premium digital solutions for modern businesses. Elevating brands through innovation and excellence.
@@ -52,15 +52,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>hello@luxedigital.com</span>
+                <span>admin@infiinofy.com</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 63611 25047</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                <span>123 Innovation Drive, Tech City</span>
+                <span>Mahaveer Park, Kondhwa, Pune, Maharashtra 411048</span>
               </li>
             </ul>
           </div>
@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} ShreeJin Tech. All rights reserved.
+            © {currentYear} INFIINOFY. All rights reserved.
           </p>
         </div>
       </div>

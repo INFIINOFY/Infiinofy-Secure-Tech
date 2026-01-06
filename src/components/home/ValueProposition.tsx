@@ -26,7 +26,7 @@ const ValueProposition = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="text-gradient-gold">ShreeJin Tech</span>
+              Why Choose <span className="text-gradient-gold">INFIINOFY</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 ">
               We don't just build products – we craft experiences that resonate with your audience and drive measurable results.

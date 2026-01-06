@@ -44,7 +44,7 @@ const About = () => {
               className="max-w-3xl mx-auto text-center"
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                About <span className="text-gradient-gold">ShreeJin Tech</span>
+                About <span className="text-gradient-gold">INFIINOFY</span>
               </h1>
               <p className="text-xl text-muted-foreground">
                 We are a team of passionate innovators, designers, and developers dedicated to creating exceptional digital experiences that drive business growth.

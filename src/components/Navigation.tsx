@@ -75,11 +75,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between relative">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
+            {/* <div className="relative">
               <Sparkles className="w-8 h-8 text-primary transition-transform group-hover:rotate-12" />
               <div className="absolute inset-0 blur-lg bg-primary/30 animate-glow-pulse" />
-            </div>
-            <span className="text-2xl font-bold text-gradient-gold">ShreeJin Tech</span>
+            </div> */}
+            <span className="text-2xl font-bold text-gradient-gold">INFIINOFY</span>
           </Link>
 
           {/* Desktop Navigation - Centered */}

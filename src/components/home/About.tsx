@@ -18,7 +18,7 @@ const About = () => {
             className="space-y-6"
           >
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-              About ShreeJin Tech
+              About INFIINOFY
             </div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               We build future-ready experiences on{" "}

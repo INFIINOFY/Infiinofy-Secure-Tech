@@ -56,19 +56,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "hello@luxedigital.com",
-      link: "mailto:hello@luxedigital.com",
+      content: "admin@infiinofy.com",
+      link: "mailto:admin@infiinofy.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+91 63611 25047",
+      link: "tel:+916361125047",
     },
     {
       icon: MapPin,
       title: "Office",
-      content: "123 Innovation Drive, Tech City, TC 12345",
+      content: "Mahaveer Park, Kondhwa, Pune, Maharashtra 411048",
       link: "#",
     },
   ];
@@ -131,6 +131,9 @@ const ContactSection = () => {
                 <h3 className="font-semibold mb-2 text-white">Office Hours</h3>
                 <p className="text-sm text-slate-300 mb-3">
                   Monday - Friday: 9:00 AM - 6:00 PM
+                </p>
+                <p className="text-sm text-slate-300 mb-3">
+                  Saturday: 9:00 AM - 2:00 PM
                 </p>
                 <p className="text-sm text-slate-300">
                   Weekend: By Appointment
