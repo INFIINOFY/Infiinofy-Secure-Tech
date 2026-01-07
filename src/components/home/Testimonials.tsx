@@ -17,9 +17,21 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
-      role: "Director, Global Ventures",
-      content: "The team's expertise and professionalism made our digital transformation seamless. Highly recommend!",
+      name: "Pushpak Jewellers",
+      role: "Owner",
+      content: "Infiinofy built a desktop invoice app that’s fast, easy to use, and perfect for our custom jewellery orders. It’s really improved our daily work. Looking forward to working with them again!",
+      rating: 5,
+    },
+     {
+      name: "Arihant Jewellers",
+      role: "Owner",
+      content: "Infiinofy created a beautiful and responsive e-commerce site for us. It’s easy to manage, has secure payments, and real-time order tracking works great. Our customers love the experience. Would definitely work with them again!",
+      rating: 5,
+    },
+     {
+      name: "Atlas Imitation",
+      role: "Owner",
+      content: "Infiinofy did an excellent job building our Shopify store for Atlas Imitation. The website looks premium, runs smoothly, and has significantly improved our online presence.",
       rating: 5,
     },
   ];

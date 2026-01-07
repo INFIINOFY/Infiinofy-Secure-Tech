@@ -301,7 +301,7 @@ export default function ServicesSection() {
           backgroundPosition: 'center',
         }}
       >
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/50 to-background" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/0 via-background/25 to-background" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1E293B]/50 to-transparent" />
       <Particles count={80} />

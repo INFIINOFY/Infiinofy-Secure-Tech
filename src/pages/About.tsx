@@ -56,22 +56,22 @@ const About = () => {
         {/* Story Section */}
         <section className="py-24">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-5xl font-bold mb-6">Our <span className="text-gradient-gold">Story</span> </h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed lg:text-lg">
-                  <p>
-                    Infiinofy doesn&apos;t just represent infinity it creates it. We believe that real growth happens when we help others grow. Built on passion, curiosity, and purpose, Infiinofy exists to turn ideas into impactful digital solutions that move businesses forward.
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6">Our <span className="text-gradient-gold">Story</span> </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl">
+                    Infiinofy doesn&apos;t just represent infinity it creates it. We believe that we grow when we help you grow. Built on passion, curiosity, and purpose, Infiinofy exists to turn ideas into impactful digital solutions that move businesses forward.
                   </p>
-                  <p>
+                  <p className="text-base sm:text-lg md:text-xl">
                     Our name defines who we are. <strong>Infi</strong> stands for infinite possibilities, <strong>Ino</strong> represents innovation, and <strong>fy</strong> means to make things happen. Together, Infiinofy means to make <em>infinite innovation happen.</em> We&apos;re not just developers we&apos;re <strong>Infiinos</strong>, infinite innovators who think beyond code to build meaningful, future-ready experiences.
                   </p>
-                  <p>
+                  <p className="text-base sm:text-lg md:text-xl">
                    The falling star on our website represents your dream the vision you want to bring to life. Just like a wish made on a falling star, we&apos;re here to help turn your ideas into reality. When your dream grows, we grow with you — and that&apos;s the heart of Infiinofy.
                   </p>
                 </div>

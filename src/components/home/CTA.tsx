@@ -25,7 +25,7 @@ const CTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/schedule">
-              <Button size="lg" className="text-lg px-8 hover-glow group">
+              <Button size="lg" className="text-lg px-7 hover-glow group">
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
