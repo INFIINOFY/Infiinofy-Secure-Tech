@@ -63,16 +63,16 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl font-bold mb-6">Our Story</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <h2 className="text-5xl font-bold mb-6">Our <span className="text-gradient-gold">Story</span> </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed lg:text-lg">
                   <p>
-                    Founded in 2013, Luxe Digital emerged from a simple vision: to bridge the gap between cutting-edge technology and elegant design. We believed that digital solutions should be both powerful and beautiful.
+                    Infiinofy doesn&apos;t just represent infinity it creates it. We believe that real growth happens when we help others grow. Built on passion, curiosity, and purpose, Infiinofy exists to turn ideas into impactful digital solutions that move businesses forward.
                   </p>
                   <p>
-                    Over the past decade, we've grown from a small team of three to a full-service digital agency, but our core values remain unchanged. We're still driven by the same passion for innovation and excellence that defined our early days.
+                    Our name defines who we are. <strong>Infi</strong> stands for infinite possibilities, <strong>Ino</strong> represents innovation, and <strong>fy</strong> means to make things happen. Together, Infiinofy means to make <em>infinite innovation happen.</em> We&apos;re not just developers we&apos;re <strong>Infiinos</strong>, infinite innovators who think beyond code to build meaningful, future-ready experiences.
                   </p>
                   <p>
-                    Today, we're proud to have helped over 150 businesses transform their digital presence, from startups to Fortune 500 companies. Each project reinforces our belief that great digital experiences can truly change the game.
+                   The falling star on our website represents your dream the vision you want to bring to life. Just like a wish made on a falling star, we&apos;re here to help turn your ideas into reality. When your dream grows, we grow with you — and that&apos;s the heart of Infiinofy.
                   </p>
                 </div>
               </motion.div>
@@ -167,12 +167,14 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              
+              className="flex flex-row justify-center gap-8 sm:gap-12 md:gap-20"
+             
             >
+              {/* className="grid grid-cols-3 md:grid-cols-3 gap-8 max-w-4xl mx-auto" */}
               {[
                 { count: "25+", label: "Team Members" },
                 { count: "10+", label: "Countries" },
-                { count: "15", label: "Awards Won" },
                 { count: "100%", label: "Remote-Friendly" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">

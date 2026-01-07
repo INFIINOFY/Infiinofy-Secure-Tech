@@ -5,15 +5,15 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc",
-      content: "Luxe Digital transformed our vision into reality. Their attention to detail and commitment to excellence is unmatched.",
+      name: "Parshwa Enterprice",
+      role: "Owner",
+      content: "The petrol pump management system by Infiinofy made our daily work much easier. Inventory, sales, and staff details are all in one place now. It saves time, reduces errors, and works smoothly. Highly recommended.",
       rating: 5,
     },
     {
-      name: "Michael Chen",
-      role: "Founder, Innovation Labs",
-      content: "Working with Luxe Digital was a game-changer. They delivered beyond our expectations and on time.",
+      name: "SwamiRaj Media",
+      role: "Owner",
+      content: "We are very happy with the website developed for Swamiraj Media. The design is clean, professional, and perfectly represents our brand. The site loads fast and looks great on all devices.",
       rating: 5,
     },
     {
@@ -23,6 +23,9 @@ const Testimonials = () => {
       rating: 5,
     },
   ];
+
+  // Duplicate for seamless marquee loop
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section className="py-24 bg-secondary/20">
@@ -42,32 +45,50 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="p-8 h-full backdrop-luxury hover-lift">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-6 leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="mt-auto">
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="relative w-full overflow-hidden">
+          <div className="animate-marquee flex gap-6 w-max">
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-[450px] lg:w-[500px]"
+              >
+                <Card className="p-8 h-full backdrop-luxury hover-lift transition-all duration-300">
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-foreground mb-6 leading-relaxed italic">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="mt-auto">
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
+
+        <style>{`
+          .animate-marquee {
+            animation: scroll-marquee 25s linear infinite;
+          }
+
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+
+          @keyframes scroll-marquee {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

@@ -213,7 +213,7 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      rows={8}
+                      rows={5}
                       className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
                       placeholder="Tell us about your project or inquiry..."
                     />

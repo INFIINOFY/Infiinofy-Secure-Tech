@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import MeteorShower from "../MeteorShower";
 import ServiceBlob, { ServiceData } from "./ServiceBlob";
+import heroBg from "@/assets/hero_bg.png";
 
 
 // Background floating particles
@@ -292,6 +293,16 @@ export default function ServicesSection() {
 
   return (
     <section id="services" ref={ref} className="relative py-20">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/50 to-background" /> */}
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1E293B]/50 to-transparent" />
       <Particles count={80} />
       <MeteorShower />

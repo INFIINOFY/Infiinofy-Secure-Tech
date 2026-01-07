@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import project1 from "@/assets/project-1.jpg";
 import AtlasImitation from "@/assets/AtlasImitation.png";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import SwamiRajMedia from "@/assets/SwamirajMedia.png";
+import ParshwaPetroleums from "@/assets/Parshwa_Petroleums.png";
+import pushpak from "@/assets/PushpakJewellers.png";
+import RMDCS from "@/assets/RMDCS.png";
+import ArihantJewellers from "@/assets/Arihant.png";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -19,11 +20,59 @@ const Projects = () => {
       title: "Atlas Imitation",
       category: "Web Development",
       description: "A luxury e-commerce platform with seamless checkout and personalized recommendations.",
-      fullDescription: "Built a comprehensive e-commerce solution featuring AI-powered product recommendations, secure payment processing, inventory management, and an intuitive admin dashboard. The platform handles 100K+ daily visitors with 99.9% uptime.",
+      fullDescription: "Atlas Imitation is a modern e-commerce jewelry store built on Shopify, designed to showcase premium imitation jewelry with a clean, elegant user experience. The platform focuses on smooth navigation, secure payments, and a mobile-first design to deliver a seamless shopping experience for customers.",
       image: AtlasImitation,
       tags: ["Shopify", "Liquid"],
       link: "https://www.atlasimitation.com",
     },
+   {
+  title: "SwamiRaj Media",
+  category: "Web Development",
+  description: "A professional agency website designed to showcase digital marketing and political campaign services.",
+  fullDescription: "SwamiRaj Media is a modern, responsive agency website built to highlight digital marketing, political campaigning, and business development services. The platform focuses on clean UI, clear service presentation, and strong call-to-actions, providing visitors with an engaging and trustworthy experience across all devices.",
+  image: SwamiRajMedia,
+  tags: ["React", "Tailwind CSS", "Responsive Design"],
+  link: "https://www.swamirajmedia.com",
+},
+{
+  title: "Parshwa Petroleums",
+  category: "Business Automation",
+  description: "A comprehensive management app built on Zoho Creator to streamline operations and reporting.",
+  fullDescription: "Parshwa Petroleums is a custom management application developed on Zoho Creator to simplify and automate key business operations. The app includes features for inventory tracking, sales reporting, task management, and real-time data insights, empowering teams to work efficiently and make informed decisions.",
+  image: ParshwaPetroleums,
+  tags: ["Zoho Creator", "Deluge", "Business Automation"],
+  link: "https://www.zoho.com/creator",
+},
+{
+  title: "Pushpak Jeweller",
+  category: "Business Automation",
+  description: "Enabled seamless management for hundreds of bespoke orders monthly",
+  fullDescription: "Developed a native desktop app for efficient invoice generation and management tailored to custom jewellery orders.",
+  image: pushpak,
+  tags: ["Desktop App","Invoice Management"],
+  //link: "https://www.zoho.com/creator",
+},
+{
+  title: "RMDCS",
+  category: "Cybersecurity & Cryptography",
+  description: "A patented encryption system designed to defend data against quantum-era threats.",
+  fullDescription: "RMDCS is a patented encryption framework engineered using randomized matrix transformations and a double-key logic mechanism. The system is designed to enhance data security and resilience against emerging quantum computing threats, providing a robust and future-ready approach to secure information exchange.",
+  image: RMDCS,
+  tags: ["Cryptography", "Quantum-Resistant Security", "Encryption Algorithms"],
+  link: "", 
+},
+{
+  title: "Arihant Jewellers",
+  category: "E-commerce Web Development",
+  description: "A responsive jewellery e-commerce website with secure payments and order tracking.",
+  fullDescription: "Arihant Jewellers is a modern e-commerce website designed and developed to showcase jewellery collections with a premium and user-friendly experience. The platform features secure payment integration, real-time order tracking, and a fully responsive design, ensuring smooth and reliable shopping across all devices.",
+  image: ArihantJewellers,
+  tags: ["E-commerce", "Payment Gateway", "Responsive Design"],
+  link: "", 
+},
+
+
+
    
   ];
 
@@ -42,7 +91,7 @@ const Projects = () => {
               className="max-w-3xl mx-auto text-center"
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Our <span className="text-gradient-gold">Projects</span>
+                Signature <span className="text-gradient-gold">Projects</span>
               </h1>
               <p className="text-xl text-muted-foreground">
                 Explore our portfolio of successful digital transformations and innovative solutions

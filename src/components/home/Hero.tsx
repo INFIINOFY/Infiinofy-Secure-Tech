@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero_bg.png";
 import InteractiveSpiral from "@/components/InteractiveSpiral";
 import MeteorShower from "@/components/MeteorShower"
 const phrases = [
@@ -87,7 +87,7 @@ useEffect(() => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      {/* <div 
+       <div 
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBg})`,
@@ -95,9 +95,10 @@ useEffect(() => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/75 to-background" />
-      </div> */}
-      {/* <InteractiveSpiral className="absolute inset-0 z-0" /> */}
+       <div className="absolute inset-0 bg-gradient-to-b from-primary/25 via-background/75 " /> 
+        {/* <div className="absolute inset-0 bg-gradient-to-b from primary/10 via-background/50 to-background" /> */}
+      </div> 
+       {/* <InteractiveSpiral className="absolute inset-0 z-0" />  */}
       <MeteorShower/>
 
       {/* Animated Particles */}
@@ -187,9 +188,9 @@ useEffect(() => {
             className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto"
           >
             {[
-              { value: "150+", label: "Projects Delivered" },
+              { value: "30+", label: "Projects Delivered" },
               { value: "98%", label: "Client Satisfaction" },
-              { value: "24/7", label: "Support Available" },
+              { value: "25+", label: "Infiinos" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
