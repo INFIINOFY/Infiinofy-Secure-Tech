@@ -11,9 +11,10 @@ type ScheduleStepFourProps = {
   formData: FormValues;
   onBack: () => void;
   onComplete: () => void;
+  isSubmitting?: boolean;
 };
 
-export default function ScheduleStepFour({ date, time, formData, onBack, onComplete }: ScheduleStepFourProps) {
+export default function ScheduleStepFour({ date, time, formData, onBack, onComplete, isSubmitting }: ScheduleStepFourProps) {
   return (
     <motion.div
       className="flex flex-col items-center justify-center text-center p-6 bg-transparent"
@@ -98,8 +99,8 @@ export default function ScheduleStepFour({ date, time, formData, onBack, onCompl
         <Button onClick={onBack} variant="outline" size="lg">
           Back
         </Button>
-        <Button onClick={onComplete} size="lg" className="hover-glow bg-cyan-500 hover:bg-cyan-600">
-          Confirm Meeting
+        <Button onClick={onComplete} size="lg" disabled={!!isSubmitting} className="hover-glow bg-cyan-500 hover:bg-cyan-600 disabled:bg-slate-600">
+          {isSubmitting ? "Scheduling..." : "Confirm Meeting"}
         </Button>
       </div>
     </motion.div>

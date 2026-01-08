@@ -11,6 +11,7 @@ import ParshwaPetroleums from "@/assets/Parshwa_Petroleums.png";
 import pushpak from "@/assets/PushpakJewellers.png";
 import RMDCS from "@/assets/RMDCS.png";
 import ArihantJewellers from "@/assets/Arihant.png";
+import patent from "@/assets/Patent.png";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -59,7 +60,7 @@ const Projects = () => {
   fullDescription: "RMDCS is a patented encryption framework engineered using randomized matrix transformations and a double-key logic mechanism. The system is designed to enhance data security and resilience against emerging quantum computing threats, providing a robust and future-ready approach to secure information exchange.",
   image: RMDCS,
   tags: ["Cryptography", "Quantum-Resistant Security", "Encryption Algorithms"],
-  link: "", 
+  link: patent, 
 },
 {
   title: "Arihant Jewellers",

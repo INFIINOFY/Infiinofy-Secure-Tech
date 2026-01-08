@@ -66,13 +66,13 @@ const About = () => {
                 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6">Our <span className="text-gradient-gold">Story</span> </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p className="text-base sm:text-lg md:text-xl">
-                    Infiinofy doesn&apos;t just represent infinity it creates it. We believe that we grow when we help you grow. Built on passion, curiosity, and purpose, Infiinofy exists to turn ideas into impactful digital solutions that move businesses forward.
+                    INFIINOFY doesn&apos;t just represent infinity it creates it. We believe that we grow when we help you grow. Built on passion, curiosity, and purpose, INFIINOFY exists to turn ideas into impactful digital solutions that move businesses forward.
                   </p>
                   <p className="text-base sm:text-lg md:text-xl">
-                    Our name defines who we are. <strong>Infi</strong> stands for infinite possibilities, <strong>Ino</strong> represents innovation, and <strong>fy</strong> means to make things happen. Together, Infiinofy means to make <em>infinite innovation happen.</em> We&apos;re not just developers we&apos;re <strong>Infiinos</strong>, infinite innovators who think beyond code to build meaningful, future-ready experiences.
+                    Our name defines who we are. <strong>Infi</strong> stands for infinite possibilities, <strong>Ino</strong> represents innovation, and <strong>fy</strong> means to make things happen. Together, INFIINOFY means to make <em>infinite innovation happen.</em> We&apos;re not just developers we&apos;re <strong>Infiinos</strong>, infinite innovators who think beyond code to build meaningful, future-ready experiences.
                   </p>
                   <p className="text-base sm:text-lg md:text-xl">
-                   The falling star on our website represents your dream the vision you want to bring to life. Just like a wish made on a falling star, we&apos;re here to help turn your ideas into reality. When your dream grows, we grow with you — and that&apos;s the heart of Infiinofy.
+                   The falling star on our website represents your dream the vision you want to bring to life. Just like a wish made on a falling star, we&apos;re here to help turn your ideas into reality. When your dream grows, we grow with you — and that&apos;s the heart of INFIINOFY.
                   </p>
                 </div>
               </motion.div>

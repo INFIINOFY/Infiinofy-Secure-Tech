@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero_bg.png";
 import InteractiveSpiral from "@/components/InteractiveSpiral";
 import MeteorShower from "@/components/MeteorShower"
+import TwinklingStars from "@/components/TwinklingStars";
 const phrases = [
   "Digital Presence",
   "Intelligent Products",
@@ -100,6 +101,7 @@ useEffect(() => {
       </div> 
        {/* <InteractiveSpiral className="absolute inset-0 z-0" />  */}
       <MeteorShower/>
+      <TwinklingStars className="absolute inset-0 z-0 pointer-events-none" count={140} />
 
       {/* Animated Particles */}
       <div className="absolute inset-0 z-0">

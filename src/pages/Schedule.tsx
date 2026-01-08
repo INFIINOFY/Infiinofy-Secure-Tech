@@ -21,6 +21,7 @@ const Schedule = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const steps = [
@@ -38,24 +39,58 @@ const Schedule = () => {
     setCurrentStep(currentStep - 1);
   };
 
-  const handleComplete = () => {
-    toast({
-      title: "Meeting Scheduled! ✨",
-      description: "We'll send you a confirmation email shortly.",
-    });
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: "",
-    });
-    setDate("");
-    setTime("");
-    setCurrentStep(1);
+  const handleComplete = async () => {
+    setIsSubmitting(true);
+    try {
+      const payload = {
+        date,
+        time,
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        message: formData.message,
+      };
+      const response = await fetch("/api/schedule", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast({
+          title: "Meeting Scheduled! ✨",
+          description: "We've emailed your meeting details.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: "",
+        });
+        setDate("");
+        setTime("");
+        setCurrentStep(1);
+      } else {
+        toast({
+          title: "Failed to schedule",
+          description: data.error || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
+      console.error("Schedule submit error:", err);
+      toast({
+        title: "Network error",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -159,6 +194,7 @@ const Schedule = () => {
                     formData={formData}
                     onBack={handleBack}
                     onComplete={handleComplete}
+                    isSubmitting={isSubmitting}
                   />
                 )}
               </AnimatePresence>

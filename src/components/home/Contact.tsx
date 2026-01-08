@@ -19,11 +19,12 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     service: "",
-    subject: "",
     message: "",
   });
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
     "ERP Implementation",
@@ -34,22 +35,59 @@ const ContactSection = () => {
     "Web Development",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    toast({
-      title: "Message Sent! ",
-      description: "We'll get back to you within 24 hours.",
-    });
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      service: "",
-      subject: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    const payload = {
+      fullName: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast({
+          title: "Email Sent Successfully!",
+          description: "Thank you for your message! We'll get back to you soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        toast({
+          title: "Email Failed",
+          description: data.error || "Failed to send email. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
+      console.error("Failed to send email:", err);
+      toast({
+        title: "Email Failed",
+        description: "Failed to send email. Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+     const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
@@ -157,8 +195,9 @@ const ContactSection = () => {
                       <Label htmlFor="name" className="text-white font-medium">Full Name *</Label>
                       <Input
                         id="name"
+                        name="name"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={handleChange}
                         required
                         className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
                         placeholder="John Doe"
@@ -168,14 +207,29 @@ const ContactSection = () => {
                       <Label htmlFor="email" className="text-white font-medium">Email *</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={handleChange}
                         required
                         className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
                         placeholder="john@example.com"
                       />
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-white font-medium">Phone *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
                   </div>
 
                   <div className="space-y-2">
@@ -195,23 +249,12 @@ const ContactSection = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-white font-medium">Subject *</Label>
-                    <Input
-                      id="subject"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      required
-                      className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
-                      placeholder="How can we help?"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
                     <Label htmlFor="message" className="text-white font-medium">Message *</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={handleChange}
                       required
                       rows={5}
                       className="bg-slate-700/80 border-slate-600 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:ring-cyan-500"
@@ -219,8 +262,8 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold group">
-                    Send Message
+                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-gray-500 disabled:to-gray-600 text-white font-semibold group">
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>
