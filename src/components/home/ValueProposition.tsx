@@ -40,7 +40,7 @@ const ValueProposition = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start space-x-3 w-full max-w-md justify-start"
+                  className="flex items-start space-x-3 w-full max-w-md justify-start text-left"
                 >
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-foreground">{benefit}</span>

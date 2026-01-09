@@ -53,6 +53,19 @@ const Navigation = () => {
     }
   };
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    if (location.pathname === "/") {
+      // Already on home page, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to home page
+      window.location.href = "/";
+    }
+  };
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -85,6 +98,17 @@ const Navigation = () => {
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => {
+              if (link.name === "Home") {
+                return (
+                  <button
+                    key={link.path}
+                    onClick={handleHomeClick}
+                    className="text-sm font-medium transition-colors hover:text-primary text-foreground/80"
+                  >
+                    {link.name}
+                  </button>
+                );
+              }
               if (link.name === "Contact") {
                 return (
                   <button
@@ -156,6 +180,17 @@ const Navigation = () => {
               <div className="mx-6 rounded-2xl bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl">
                 <div className="flex flex-col space-y-1 p-6">
                   {navLinks.map((link) => {
+                    if (link.name === "Home") {
+                      return (
+                        <button
+                          key={link.path}
+                          onClick={handleHomeClick}
+                          className="text-sm font-medium text-left transition-colors hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg text-foreground/80"
+                        >
+                          {link.name}
+                        </button>
+                      );
+                    }
                     if (link.name === "Contact") {
                       return (
                         <button
