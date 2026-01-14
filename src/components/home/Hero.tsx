@@ -19,6 +19,22 @@ const Hero = () => {
 const [displayText, setDisplayText] = useState("");
 const [phraseIndex, setPhraseIndex] = useState(0);
 const [phase, setPhase] = useState<Phase>("typing");
+ const [isVisible, setIsVisible] = useState(true);
+
+ useEffect(()=>{
+  const toggleVisibility=()=>{
+    if(window.pageYOffset>300)
+    {
+      setIsVisible(false)
+    }else{
+      setIsVisible(true)
+    }
+  }
+  window.addEventListener("scroll", toggleVisibility);
+  return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+ },[])
   const particles = useMemo(
     () =>
       [...Array(20)].map(() => ({
@@ -214,7 +230,8 @@ const scrollToSection = (href: string) => {
       </div>
 
       {/* Scroll Indicator */}
-      {/* <motion.div
+      {isVisible&&(
+      <motion.div
        onClick={() => scrollToSection('#about')}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -226,15 +243,16 @@ const scrollToSection = (href: string) => {
       className="w-30 h-12 cursor-pointer "
       loop
       autoplay
-    /> */}
+    />
         {/* <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2"
         >
           <div className="w-1 h-2 bg-primary rounded-full" />
-        </motion.div> */}
-      {/* </motion.div> */}
+        </motion.div>*/}
+     </motion.div>
+     )}
     </section>
   );
 };
