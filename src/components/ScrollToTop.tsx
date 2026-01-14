@@ -38,14 +38,34 @@ const ScrollToTop = () => {
   };
 
   const scrollToNextSection = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    const sections = document.querySelectorAll('section, footer');
+    let currentSectionIndex = -1;
+    let maxVisibleArea = 0;
+
+    // Find the currently visible section
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      const visibleArea = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      
+      if (visibleArea > maxVisibleArea && visibleArea > 0) {
+        maxVisibleArea = visibleArea;
+        currentSectionIndex = index;
+      }
     });
+
+    // Scroll to the next section
+    if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
+      const nextSection = sections[currentSectionIndex + 1];
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleClick = () => {
-    scrollToTop();
+    if (showScrollDownAnimation) {
+      scrollToNextSection();
+    } else {
+      scrollToTop();
+    }
   };
 
   return (
@@ -53,15 +73,24 @@ const ScrollToTop = () => {
       {isVisible && (
         <Button
           onClick={handleClick}
-          className="fixed bottom-8 right-8 z-50 rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/50"
+          className="fixed bottom-8 right-8 z-50 rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-transperent hover:bg-primary/50"
           aria-label="Scroll to top"
         >
-          <DotLottieReact
-            src="https://lottie.host/a8b2a8cc-3be7-4824-a595-bf85c909f986/SAYYGiBTHq.lottie"
-            className="w-20 h-20"
-            loop
-            autoplay
-          />
+          {showScrollDownAnimation ? (
+            <DotLottieReact
+              src="https://lottie.host/0b9d79e0-83d7-4a32-8fe3-88d1a345d3f8/vNXoX6fg2e.lottie"
+              className="w-10 h-10 cursor-pointer"
+              loop
+              autoplay
+            />
+          ) : (
+            <DotLottieReact
+              src="https://lottie.host/24945973-9c03-4e71-b798-e9423ecc0b68/hs6n3rcWka.json"
+              className="w-20 h-20"
+              loop
+              autoplay
+            />
+          )}
         </Button>
       )}
     </>
